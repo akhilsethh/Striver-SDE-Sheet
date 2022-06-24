@@ -1,0 +1,36 @@
+//BRUTE FORCE APPROACH
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int s = nums.size();
+        for(int i = 0; i < s; ++i){
+            for(int j = i + 1; j < s; ++j){
+                if(nums[i] + nums[j] == target){
+                    return {i, j};
+                }
+            }
+        }
+        return {};
+    }
+};
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int s = nums.size();
+        int sum = 0;
+        vector<int> v;
+        for(int i = 0; i < s - 1; ++i){
+            for(int j = i + 1; j < s; ++j){
+                sum = nums[i] + nums[j];
+                if(sum == target){
+                    v.push_back(i);
+                    v.push_back(j);
+                    break;
+                }
+            }
+        }
+        return v;
+    }
+};
